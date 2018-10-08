@@ -19,3 +19,17 @@ describe('Percentage', function() {
       });
    });
 });
+
+/** asynchronus */
+describe('#wait', function() {
+   it('should exit', function() {
+      assert.notEqual(Percentage.wait, undefined);
+   });
+   /** handle callback */
+   it('should wait', function(done) {
+      Percentage.wait(300, function(test) {
+         assert.equal(test, 18);
+         done();
+      });
+   });
+});
